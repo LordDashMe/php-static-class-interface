@@ -1,0 +1,33 @@
+{
+    "name": "lorddashme/php-static-class-interface",
+    "description": "A simple package that convert a service class into a static-like class.",
+    "keywords": [
+        "static-interface", 
+        "github", 
+        "static", 
+        "php",
+        "facade"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/lorddashme/php-static-class-interface",
+    "authors": [
+        {
+            "name": "Joshua Clifford Reyes",
+            "email": "reyesjoshuaclifford@gmail.com",
+            "homepage": "https://lorddashme.github.io/"
+        }
+    ],
+    "require": {
+        "php": ">=5.6 || >=7.0 || >=7.1 || >=7.2"
+    },
+    "require-dev": {
+        "mockery/mockery": "1.*",
+        "phpunit/phpunit": "5.* || 6.* || 7.*"
+    },
+    "autoload": {
+        "psr-4": { 
+            "LordDashMe\\StaticClassInterface\\": "src/" 
+        }
+    }
+}
