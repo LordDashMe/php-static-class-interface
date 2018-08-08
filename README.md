@@ -1,3 +1,3 @@
-# PHP Static Class Interface
+# PHP Static Class Interface [![Build Status](https://travis-ci.org/LordDashMe/php-static-class-interface.svg?branch=master)](https://travis-ci.org/LordDashMe/php-static-class-interface) [![Coverage Status](https://coveralls.io/repos/github/LordDashMe/php-static-class-interface/badge.svg?branch=master)](https://coveralls.io/github/LordDashMe/php-static-class-interface?branch=master)
 
 - A simple package that convert a service class into a static-like class.
