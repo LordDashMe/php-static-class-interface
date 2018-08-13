@@ -55,7 +55,7 @@ class ServiceClassFacade extends Facade
 {
     public static function getStaticClassAccessor()
     {
-        return '\Demo\MyClass\ServiceClass.php';
+        return '\Demo\MyClass\ServiceClass';
     }
 }
 
