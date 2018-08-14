@@ -40,7 +40,7 @@ include __DIR__  . '/vendor/autoload.php';
 
 namespace Demo\MyClass;
 
-// Import the main class of the plugin.
+// Import the main class of the package.
 use LordDashMe\StaticClassInterface\Facade;
 
 class ServiceClass
@@ -61,8 +61,8 @@ class ServiceClassFacade extends Facade
 
 // This is the main Service Class.
 $service = new ServiceClass();
-$service->testService('ServiceClass'); // Hello World ServiceClass!
+$service->testService('ServiceClass'); // echo Hello World ServiceClass!
 
-// And we can now use Service Class like a "static" class implementation.
-ServiceClassFacade::testService('ServiceFacadeClass'); // Hello World ServiceFacadeClass!
+// And we can now use the Service Class like a "static" class implementation.
+ServiceClassFacade::testService('ServiceFacadeClass'); // echo Hello World ServiceFacadeClass!
 ```
