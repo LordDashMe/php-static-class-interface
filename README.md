@@ -2,7 +2,7 @@
 
 - A simple package that convert a service class into a static-like class.
 
-## Requirements
+## Requirement(s)
 
 - PHP version from 5.6.* up to latest.
 
