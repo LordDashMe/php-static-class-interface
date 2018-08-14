@@ -2,7 +2,9 @@
 
 - A simple package that convert a service class into a static-like class.
 
-- Requires a PHP version of 5.6 and up.
+## Requirements
+
+- PHP version from 5.6.* up to latest.
 
 ## Install
 
