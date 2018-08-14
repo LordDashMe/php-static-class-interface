@@ -2,6 +2,8 @@
 
 - A simple package that convert a service class into a static-like class.
 
+- Requires a PHP version of 5.6 and up.
+
 ## Install
 
 ### via Composer
@@ -12,13 +14,16 @@
 composer require lorddashme/php-static-class-interface
 ```
 
-### via Native way
+### via Native Way
 
-- You can also use this package without using composer, just clone this repository and include or require the important class.
+- You can also use this package without composer, just clone this repository and include or require the important class.
 
 ```php
 <?php
 
+include __DIR__ . '/src/Exception/Base.php';
+include __DIR__ . '/src/Exception/ClassNamespaceResolver.php';
+include __DIR__ . '/src/Exception/StaticClassAccessor.php';
 include __DIR__ . '/src/Facade.php';
 
 use LordDashMe\StaticClassInterface\Facade;
@@ -27,11 +32,11 @@ use LordDashMe\StaticClassInterface\Facade;
 
 ## Usage
 
-- You can start using the package without any configuration needed. Assuming you install the package via Composer.
+- You can start using the package without any configuration needed. Assuming you installed the package via Composer.
 
 - Create a new class that will be represent as the "Static" class of the "Service" class provided in the ```getStaticClassAccessor()```.
 
-- Below, the simple implementation of the Facade class.
+- Below, the simple implementation of the package or Facade class.
 
 ```php
 <?php
