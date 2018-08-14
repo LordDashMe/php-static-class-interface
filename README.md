@@ -31,7 +31,7 @@ use LordDashMe\StaticClassInterface\Facade;
 
 - Create a new class that will be represent as the "Static" class of the "Service" class provided in the ```getStaticClassAccessor()```.
 
-- Below are the simple implementation of the Facade class.
+- Below, the simple implementation of the Facade class.
 
 ```php
 <?php
@@ -55,6 +55,8 @@ class ServiceClassFacade extends Facade
 {
     public static function getStaticClassAccessor()
     {
+        // The namespace of the Service Class that we will convert
+        // into "static" like class.
         return '\Demo\MyClass\ServiceClass';
     }
 }
