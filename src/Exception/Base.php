@@ -18,7 +18,4 @@ use Exception;
  * 
  * @author Joshua Clifford Reyes <reyesjoshuaclifford@gmail.com>
  */
-class Base extends Exception
-{
-
-}
+class Base extends Exception {}
