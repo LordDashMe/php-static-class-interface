@@ -10,7 +10,7 @@
 
 ### via Composer
 
-- Use the command below to install the package via composer.
+- Use the command below to install the package via composer:
 
 ```txt
 composer require lorddashme/php-static-class-interface
@@ -38,7 +38,7 @@ use LordDashMe\StaticClassInterface\Facade;
 
 - Create a new class that will be represent as the "Static" class of the "Service" class provided in the ```getStaticClassAccessor()```.
 
-- Below, the simple implementation of the package or Facade class.
+- Below, the simple implementation of the package or Facade class:
 
 ```php
 <?php
