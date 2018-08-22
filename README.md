@@ -1,4 +1,4 @@
-# PHP Static Class Interface [![Build Status](https://travis-ci.org/LordDashMe/php-static-class-interface.svg?branch=master)](https://travis-ci.org/LordDashMe/php-static-class-interface) [![Coverage Status](https://coveralls.io/repos/github/LordDashMe/php-static-class-interface/badge.svg?branch=master)](https://coveralls.io/github/LordDashMe/php-static-class-interface?branch=master)
+# PHP Static Class Interface [![Latest Stable Version](https://img.shields.io/packagist/v/LordDashMe/php-static-class-interface.svg?style=flat-square)](https://packagist.org/packages/LordDashMe/php-static-class-interface) [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%205.6-8892BF.svg?style=flat-square)](https://php.net/) [![Build Status](https://img.shields.io/travis/LordDashMe/php-static-class-interface/master.svg?style=flat-square)](https://travis-ci.org/LordDashMe/php-static-class-interface) [![Coverage Status](https://img.shields.io/coveralls/LordDashMe/php-static-class-interface/master.svg?style=flat-square)](https://coveralls.io/github/LordDashMe/php-static-class-interface?branch=master)
 
 - A simple package that convert a service class into a static-like class.
 
@@ -30,6 +30,10 @@ include __DIR__ . '/src/Facade.php';
 
 use LordDashMe\StaticClassInterface\Facade;
 
+class ServiceFacade extends Facade 
+{
+    ...
+}
 ```
 
 ## Usage
@@ -50,6 +54,7 @@ namespace Demo\MyClass;
 // Import the main class of the package.
 use LordDashMe\StaticClassInterface\Facade;
 
+// This is the original service class.
 class ServiceClass
 {
     public function testService($context)
@@ -58,6 +63,7 @@ class ServiceClass
     }
 }
 
+// This is the converted service class that can now access like static class.
 class ServiceClassFacade extends Facade
 {
     public static function getStaticClassAccessor()
