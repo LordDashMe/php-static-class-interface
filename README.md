@@ -1,7 +1,8 @@
 # PHP Static Class Interface 
-[![Latest Stable Version](https://img.shields.io/packagist/v/LordDashMe/php-static-class-interface.svg?style=flat-square)](https://packagist.org/packages/LordDashMe/php-static-class-interface) [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%205.6-8892BF.svg?style=flat-square)](https://php.net/) [![Build Status](https://img.shields.io/travis/LordDashMe/php-static-class-interface/master.svg?style=flat-square)](https://travis-ci.org/LordDashMe/php-static-class-interface) [![Coverage Status](https://img.shields.io/coveralls/LordDashMe/php-static-class-interface/master.svg?style=flat-square)](https://coveralls.io/github/LordDashMe/php-static-class-interface?branch=master)
 
-- A simple package that convert a service class into a static-like class.
+A simple package that convert a service class into a static-like class.
+
+[![Latest Stable Version](https://img.shields.io/packagist/v/LordDashMe/php-static-class-interface.svg?style=flat-square)](https://packagist.org/packages/LordDashMe/php-static-class-interface) [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%205.6-8892BF.svg?style=flat-square)](https://php.net/) [![Build Status](https://img.shields.io/travis/LordDashMe/php-static-class-interface/master.svg?style=flat-square)](https://travis-ci.org/LordDashMe/php-static-class-interface) [![Coverage Status](https://img.shields.io/coveralls/LordDashMe/php-static-class-interface/master.svg?style=flat-square)](https://coveralls.io/github/LordDashMe/php-static-class-interface?branch=master)
 
 ## Requirement(s)
 
