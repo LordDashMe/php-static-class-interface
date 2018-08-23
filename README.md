@@ -70,8 +70,8 @@ class ServiceClassFacade extends Facade
 {
     public static function getStaticClassAccessor()
     {
-        // The namespace of the Service Class that we will convert
-        // into "static" like class.
+        // The namespace of the Service Class that will convert
+        // into a "static" like class.
         return '\Demo\MyClass\ServiceClass';
     }
 }
