@@ -40,7 +40,7 @@ class ServiceFacade extends Facade
 
 ## Usage
 
-- You can start using the package without any configuration needed. Assuming you installed the package via Composer.
+- You can start using the package without any configuration. Assuming you installed the package via Composer.
 
 - Create a new class that will be represent as the "Static" class of the "Service" class provided in the ```getStaticClassAccessor()```.
 
