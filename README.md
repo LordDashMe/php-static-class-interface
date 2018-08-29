@@ -44,7 +44,7 @@ class ServiceFacade extends Facade
 
 - Create a new class that will be represent as the "Static" class of the "Service" class provided in the ```getStaticClassAccessor()```.
 
-- Below, the simple implementation of the package or Facade class:
+- Below are the simple implementation of the package or Facade class:
 
 ```php
 <?php
