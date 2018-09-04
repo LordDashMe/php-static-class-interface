@@ -60,7 +60,7 @@ class Facade
     }
 
     /**
-     * Handles all the methods that will lead to service class capability.
+     * Handle all the methods that will lead to service class capability.
      *
      * @param  string  $method
      * @param  array   $args
