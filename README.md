@@ -42,7 +42,7 @@ class ServiceFacade extends Facade
 
 - You can start using the package without any configuration. Assuming you installed the package via Composer.
 
-- Create a new class that will be represent as the "Static" class of the "Service" class. Override the ```getStaticClassAccessor()``` and set the namespace of the target "Service" class.
+- Create a new class that will represent as the "Static" class of the "Service" class. Override the ```getStaticClassAccessor()``` and set the namespace of the target "Service" class.
 
 - Below are the simple implementation of the package or Facade class:
 
