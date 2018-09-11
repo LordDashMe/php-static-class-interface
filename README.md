@@ -65,7 +65,7 @@ class ServiceClass
     }
 }
 
-// This is the converted service class that can now access like static class.
+// This is the mimic service class that can now access like static class.
 class ServiceClassFacade extends Facade
 {
     public static function getStaticClassAccessor()
