@@ -6,7 +6,7 @@ use Mockery as Mockery;
 use PHPUnit\Framework\TestCase;
 use LordDashMe\StaticClassInterface\Facade;
 
-class FacadeUnitTest extends TestCase
+class FacadeTest extends TestCase
 {
     /**
      * @test
@@ -42,17 +42,14 @@ class FacadeUnitTest extends TestCase
     public function it_should_allow_to_declare_a_function_in_a_static_way()
     {
         $test = \LordDashMe\StaticClassInterface\Tests\Unit\MockFacadeService::test();
-        $on_way = \LordDashMe\StaticClassInterface\Tests\Unit\MockFacadeService::giveWay();
+        $onWay = \LordDashMe\StaticClassInterface\Tests\Unit\MockFacadeService::giveWay();
 
         $this->assertTrue($test);
-        $this->assertEquals('On way!', $on_way);
+        $this->assertEquals('On way!', $onWay);
     }
 }
 
-class MockFacadeServiceClassNoGetStaticClassAccssorDeclared extends Facade 
-{
-
-}
+class MockFacadeServiceClassNoGetStaticClassAccssorDeclared extends Facade {}
 
 class MockFacadeServiceClassNotValidServiceClassNamespace extends Facade
 {
