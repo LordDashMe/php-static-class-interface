@@ -78,9 +78,6 @@ class ServiceClassFacade extends Facade
     }
 }
 
-// To try the classes that we created above,
-// below are the sample initialization.
-
 // This is Service Class.
 $service = new ServiceClass();
 $service->testService('ServiceClass'); // echo Hello World ServiceClass!
