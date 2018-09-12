@@ -42,13 +42,16 @@ class ServiceFacade extends Facade
 
 - You can start using the package without any configuration. Assuming the package was installed via Composer.
 
-- Create a new class that will represent as the "Static" class of the "Service" class. Override the ```getStaticClassAccessor()``` and set the namespace of the target "Service" class.
+- Create a new class that will represent as the "Static" class of the "Service" class. 
+
+- Override the ```getStaticClassAccessor()``` and set the namespace of the target "Service" class.
 
 - Below are the simple implementation of the package:
 
 ```php
 <?php
 
+// Include the Composer autoload file.
 include __DIR__  . '/vendor/autoload.php';
 
 namespace Demo\MyClass;
