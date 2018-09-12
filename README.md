@@ -78,15 +78,15 @@ class ServiceClassFacade extends Facade
     }
 }
 
-// To try the classes that we created above
+// To try the classes that we created above,
 // below are the sample initialization.
 
 // This is Service Class.
-$service = new \Demo\MyClass\ServiceClass();
+$service = new ServiceClass();
 $service->testService('ServiceClass'); // echo Hello World ServiceClass!
 
 // And we can now use the Service Class like a "static" class implementation.
-\Demo\MyClass\ServiceClassFacade::testService('ServiceFacadeClass'); // echo Hello World ServiceFacadeClass!
+ServiceClassFacade::testService('ServiceFacadeClass'); // echo Hello World ServiceFacadeClass!
 ```
 
 ## License
