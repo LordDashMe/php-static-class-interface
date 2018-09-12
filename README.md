@@ -51,7 +51,6 @@ class ServiceFacade extends Facade
 ```php
 <?php
 
-// Include the Composer autoload file.
 include __DIR__  . '/vendor/autoload.php';
 
 namespace Demo\MyClass;
@@ -79,12 +78,15 @@ class ServiceClassFacade extends Facade
     }
 }
 
+// To try the classes that we created above
+// below are the sample initialization.
+
 // This is Service Class.
-$service = new ServiceClass();
+$service = new \Demo\MyClass\ServiceClass();
 $service->testService('ServiceClass'); // echo Hello World ServiceClass!
 
 // And we can now use the Service Class like a "static" class implementation.
-ServiceClassFacade::testService('ServiceFacadeClass'); // echo Hello World ServiceFacadeClass!
+\Demo\MyClass\ServiceClassFacade::testService('ServiceFacadeClass'); // echo Hello World ServiceFacadeClass!
 ```
 
 ## License
