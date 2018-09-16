@@ -34,7 +34,10 @@ use LordDashMe\StaticClassInterface\Facade;
 
 class ServiceFacade extends Facade 
 {
-    ...
+    public static function getStaticClassAccessor()
+    {
+        return '\Namespace\ServiceClass';
+    }
 }
 ```
 
