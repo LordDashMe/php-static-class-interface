@@ -32,7 +32,7 @@ include __DIR__ . '/src/Facade.php';
 
 use LordDashMe\StaticClassInterface\Facade;
 
-class ServiceFacade extends Facade 
+class ServiceClassFacade extends Facade 
 {
     public static function getStaticClassAccessor()
     {
