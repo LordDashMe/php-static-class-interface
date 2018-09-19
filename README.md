@@ -20,7 +20,7 @@ composer require lorddashme/php-static-class-interface
 
 ### via Native Way
 
-- You can also use this package without composer, just clone this repository and include or require the important class:
+- You can also use this package without composer, just clone this repository and import all the important class:
 
 ```php
 <?php
