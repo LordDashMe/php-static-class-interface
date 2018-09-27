@@ -11,8 +11,8 @@
 
 namespace LordDashMe\StaticClassInterface;
 
-use LordDashMe\StaticClassInterface\Exception\StaticClassAccessor;
-use LordDashMe\StaticClassInterface\Exception\ClassNamespaceResolver;
+use LordDashMe\StaticClassInterface\Exception\StaticClassAccessorException;
+use LordDashMe\StaticClassInterface\Exception\ClassNamespaceResolverException;
 
 /**
  * The Facade Class. 
@@ -106,11 +106,11 @@ class Facade
     protected static function resolveClassNameSpace($classNamespace)
     {
         if (! \is_string($classNamespace)) {
-            throw ClassNamespaceResolver::isNotString();
+            throw ClassNamespaceResolverException::isNotString();
         }
 
         if (! \class_exists($classNamespace)) {
-            throw ClassNamespaceResolver::isNotExist();
+            throw ClassNamespaceResolverException::isNotExist();
         }
 
         $classNamespace = self::classNamespaceDecorator($classNamespace);
@@ -148,6 +148,6 @@ class Facade
      */
     protected static function getStaticClassAccessor()
     {
-        throw StaticClassAccessor::isNotDeclared();
+        throw StaticClassAccessorException::isNotDeclared();
     }
 }
