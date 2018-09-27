@@ -11,8 +11,8 @@
 
 namespace LordDashMe\StaticClassInterface;
 
-use LordDashMe\StaticClassInterface\Exception\StaticClassAccessorException;
-use LordDashMe\StaticClassInterface\Exception\ClassNamespaceResolverException;
+use LordDashMe\StaticClassInterface\Exception\StaticClassAccessor as StaticClassAccessorException;
+use LordDashMe\StaticClassInterface\Exception\ClassNamespaceResolver as ClassNamespaceResolverException;
 
 /**
  * The Facade Class. 
