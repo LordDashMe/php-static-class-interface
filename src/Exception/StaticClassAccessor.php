@@ -11,14 +11,14 @@
 
 namespace LordDashMe\StaticClassInterface\Exception;
 
-use LordDashMe\StaticClassInterface\Exception\Base;
+use LordDashMe\StaticClassInterface\Exception\FacadeException;
 
 /**
  * Static Class Accessor Exception Class.
  * 
  * @author Joshua Clifford Reyes <reyesjoshuaclifford@gmail.com>
  */
-class StaticClassAccessor extends Base
+class StaticClassAccessor extends FacadeException
 {
     const ERROR_CODE_UNRESOLVED_ACCESSOR = 100;
 
