@@ -38,7 +38,7 @@ class Facade
      *
      * @return void
      */
-    public static function setClass($classNamespace, $classInstance)
+    protected static function setClass($classNamespace, $classInstance)
     {
         self::$class[$classNamespace] = $classInstance;
     }
@@ -50,7 +50,7 @@ class Facade
      *
      * @return mixed
      */
-    public static function getClass($classNamespace)
+    protected static function getClass($classNamespace)
     {
         if (isset(self::$class[$classNamespace])) {
             return self::$class[$classNamespace];
@@ -83,14 +83,13 @@ class Facade
     protected static function getResolvedClassInstance()
     {
         $classNamespace = static::getStaticClassAccessor();
-        
         $resolvedClassInstance = self::getClass($classNamespace);
         
-        if ($resolvedClassInstance) {
-            return $resolvedClassInstance;
+        if (! $resolvedClassInstance) {
+            return self::resolveClassNameSpace($classNamespace);  
         }
 
-        return self::resolveClassNameSpace($classNamespace);
+        return $resolvedClassInstance;
     }
 
     /**
@@ -99,15 +98,22 @@ class Facade
      *
      * @param  string  $classNamespace
      * 
-     * @throws LordDashMe\StaticClassInterface\Exception\ClassNamespaceResolver
+     * @throws LordDashMe\StaticClassInterface\Exception\ClassNamespaceResolver::isNotString
+     * @throws LordDashMe\StaticClassInterface\Exception\ClassNamespaceResolver::isNotExist
      *
      * @return mixed
      */
     protected static function resolveClassNameSpace($classNamespace)
     {
-        if (! \class_exists($classNamespace)) {
-            throw ClassNamespaceResolver::serviceClassIsNotExist();
+        if (! \is_string($classNamespace)) {
+            throw ClassNamespaceResolver::isNotString();
         }
+
+        if (! \class_exists($classNamespace)) {
+            throw ClassNamespaceResolver::isNotExist();
+        }
+
+        $classNamespace = self::classNamespaceDecorator($classNamespace);
 
         $classInstance = new $classNamespace();
 
@@ -117,9 +123,26 @@ class Facade
     }
 
     /**
+     * This method decorate the class namespace, adding a default backslash 
+     * in the first character to avoid the namespace scope issue.
+     * 
+     * @param  string  $classNamespace
+     * 
+     * @return string
+     */
+    protected static function classNamespaceDecorator($classNamespace)
+    {
+        if ($classNamespace[0] !== '\\') {
+            return \substr_replace($classNamespace, '\\', 0, 0);
+        }
+
+        return $classNamespace;
+    }
+
+    /**
      * Get the service class namespace that will be convert into static class.
      *
-     * @throws LordDashMe\StaticClassInterface\Exception\StaticClassAccessor
+     * @throws LordDashMe\StaticClassInterface\Exception\StaticClassAccessor::isNotDeclared
      * 
      * @return string
      */

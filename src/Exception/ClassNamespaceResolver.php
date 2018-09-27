@@ -20,12 +20,22 @@ use LordDashMe\StaticClassInterface\Exception\FacadeException;
  */
 class ClassNamespaceResolver extends FacadeException
 {
-    const ERROR_CODE_SERVICE_CLASS_NOT_EXIST = 100;
+    const IS_NOT_EXIST = 1;
+    const IS_NOT_STRING = 2;
 
-    public static function serviceClassIsNotExist($message = '', $code = null, $previous = null)
-    {
-        $message = 'The given service class namespace is not exist and can not be resolved.';
+    public static function isNotExist(
+        $message = 'The class namespace is not exist and can not be resolved.', 
+        $code = ClassNamespaceResolver::IS_NOT_EXIST, 
+        $previous = null
+    ) {
+        return new static($message, $code, $previous);
+    }
 
-        return new static($message, self::ERROR_CODE_SERVICE_CLASS_NOT_EXIST, $previous);
+    public static function isNotString(
+        $message = 'The given class namespace value is not a string and can not be resolved.', 
+        $code = ClassNamespaceResolver::IS_NOT_STRING, 
+        $previous = null
+    ) {
+        return new static($message, $code, $previous);
     }
 }

@@ -20,12 +20,13 @@ use LordDashMe\StaticClassInterface\Exception\FacadeException;
  */
 class StaticClassAccessor extends FacadeException
 {
-    const ERROR_CODE_UNRESOLVED_ACCESSOR = 100;
+    const IS_NOT_DECLARED = 1;
 
-    public static function isNotDeclared($message = '', $code = null, $previous = null)
-    {
-        $message = 'The (getStaticClassAccessor) function is not declared by the successor class.';
-
-        return new static($message, self::ERROR_CODE_UNRESOLVED_ACCESSOR, $previous);
+    public static function isNotDeclared(
+        $message = 'The "getStaticClassAccessor()" method is not declared by the successor class.', 
+        $code = StaticClassAccessor::IS_NOT_DECLARED, 
+        $previous = null
+    ) {
+        return new static($message, $code, $previous);
     }
 }

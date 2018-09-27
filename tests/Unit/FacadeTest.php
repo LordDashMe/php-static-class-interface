@@ -2,7 +2,6 @@
 
 namespace LordDashMe\StaticClassInterface\Tests\Unit;
 
-use Mockery as Mockery;
 use PHPUnit\Framework\TestCase;
 use LordDashMe\StaticClassInterface\Facade;
 
@@ -18,64 +17,102 @@ class FacadeTest extends TestCase
 
     /**
      * @test
-     * @expectedException LordDashMe\StaticClassInterface\Exception\StaticClassAccessor
-     * @expectedExceptionCode 100
      */
-    public function it_should_throw_exception_invalid_static_class_accessor_when_get_static_class_accessor_not_declared()
+    public function it_should_throw_exception_static_class_accessor_when_get_static_class_accessor_method_is_not_declared()
     {
-        \LordDashMe\StaticClassInterface\Tests\Unit\MockFacadeServiceClassNoGetStaticClassAccssorDeclared::test();
-    }
+        $this->expectException(\LordDashMe\StaticClassInterface\Exception\StaticClassAccessor::class);
+        $this->expectExceptionCode(1);
+        $this->expectExceptionMessage('The "getStaticClassAccessor()" method is not declared by the successor class.');
 
-    /**
-     * @test
-     * @expectedException LordDashMe\StaticClassInterface\Exception\ClassNamespaceResolver
-     * @expectedExceptionCode 100
-     */
-    public function it_should_throw_exception_invalid_service_instance_when_the_given_class_namespace_is_not_set()
-    {
-        \LordDashMe\StaticClassInterface\Tests\Unit\MockFacadeServiceClassNotValidServiceClassNamespace::test();   
+        TheGetStaticClassAccssorIsNotDeclared::test();
     }
 
     /**
      * @test
      */
-    public function it_should_allow_to_declare_a_function_in_a_static_way()
+    public function it_should_throw_exception_class_namespace_resolver_when_the_given_class_namespace_is_not_exist()
     {
-        $test = \LordDashMe\StaticClassInterface\Tests\Unit\MockFacadeService::test();
-        $onWay = \LordDashMe\StaticClassInterface\Tests\Unit\MockFacadeService::giveWay();
+        $this->expectException(\LordDashMe\StaticClassInterface\Exception\ClassNamespaceResolver::class);
+        $this->expectExceptionCode(1);
+        $this->expectExceptionMessage('The class namespace is not exist and can not be resolved.');
 
-        $this->assertTrue($test);
-        $this->assertEquals('On way!', $onWay);
+        TheServiceClassNamespaceIsNotExist::test();   
+    }
+
+    /**
+     * @test
+     */
+    public function it_should_throw_exception_class_namespace_resolver_when_the_given_class_namespace_is_not_string()
+    {
+        $this->expectException(\LordDashMe\StaticClassInterface\Exception\ClassNamespaceResolver::class);
+        $this->expectExceptionCode(2);
+        $this->expectExceptionMessage('The given class namespace value is not a string and can not be resolved.');
+
+        TheServiceClassNamespaceIsNotString::test();   
+    }
+
+    /**
+     * @test
+     */
+    public function it_should_use_the_service_class_in_a_static_way_with_backslash_in_class_namespace()
+    {
+        $this->assertEquals('Hello, World!', MockFacadeServiceWithBackSlash::helloWorld());
+        $this->assertEquals('A warm welcome for you.', MockFacadeServiceWithBackSlash::warmWelcome());
+    }
+
+    /**
+     * @test
+     */
+    public function it_should_use_the_service_class_in_a_static_way_without_backslash_in_class_namespace()
+    {
+        $this->assertEquals('Hello, World!', MockFacadeServiceWithoutBackSlash::helloWorld());
+        $this->assertEquals('A warm welcome for you.', MockFacadeServiceWithoutBackSlash::warmWelcome());
     }
 }
 
-class MockFacadeServiceClassNoGetStaticClassAccssorDeclared extends Facade {}
+class TheGetStaticClassAccssorIsNotDeclared extends Facade {}
 
-class MockFacadeServiceClassNotValidServiceClassNamespace extends Facade
+class TheServiceClassNamespaceIsNotExist extends Facade
 {
     public static function getStaticClassAccessor()
     {
-        return '\LordDashMe\StaticClassInterface\Tests\Unit\MockServiceClassNotValid';
+        return '\MockServiceClassNotExist';
+    }
+}
+
+class TheServiceClassNamespaceIsNotString extends Facade
+{
+    public static function getStaticClassAccessor()
+    {
+        return null;
     }
 }
 
 class MockServiceClass
 {
-    public function test()
+    public function helloWorld()
     {
-        return true; 
+        return 'Hello, World!';
     }
 
-    public function giveWay()
+    public function warmWelcome()
     {
-        return 'On way!';
+        return 'A warm welcome for you.';
     }
 }
 
-class MockFacadeService extends Facade
+class MockFacadeServiceWithBackSlash extends Facade
 {
-    public static function getStaticClassAccessor()
+    protected static function getStaticClassAccessor()
     {
         return '\LordDashMe\StaticClassInterface\Tests\Unit\MockServiceClass';
+    }
+}
+
+class MockFacadeServiceWithoutBackSlash extends Facade
+{
+    protected static function getStaticClassAccessor()
+    {
+        return 'LordDashMe\StaticClassInterface\Tests\Unit\MockServiceClass';
     }
 }
