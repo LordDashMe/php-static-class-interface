@@ -14,8 +14,8 @@ namespace LordDashMe\StaticClassInterface\Exception;
 use Exception;
 
 /**
- * Base Class Exception.
+ * Facade Class Exception.
  * 
  * @author Joshua Clifford Reyes <reyesjoshuaclifford@gmail.com>
  */
-class Base extends Exception {}
+class FacadeException extends Exception {}
