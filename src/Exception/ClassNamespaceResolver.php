@@ -11,14 +11,14 @@
 
 namespace LordDashMe\StaticClassInterface\Exception;
 
-use LordDashMe\StaticClassInterface\Exception\Base;
+use LordDashMe\StaticClassInterface\Exception\FacadeException;
 
 /**
  * Class Namespace Resolver Exception Class.
  * 
  * @author Joshua Clifford Reyes <reyesjoshuaclifford@gmail.com>
  */
-class ClassNamespaceResolver extends Base
+class ClassNamespaceResolver extends FacadeException
 {
     const ERROR_CODE_SERVICE_CLASS_NOT_EXIST = 100;
 
