@@ -25,7 +25,7 @@ composer require lorddashme/php-static-class-interface
 ```php
 <?php
 
-include __DIR__ . '/src/Exception/Base.php';
+include __DIR__ . '/src/Exception/FacadeException.php';
 include __DIR__ . '/src/Exception/ClassNamespaceResolver.php';
 include __DIR__ . '/src/Exception/StaticClassAccessor.php';
 include __DIR__ . '/src/Facade.php';
