@@ -34,7 +34,7 @@ use LordDashMe\StaticClassInterface\Facade;
 
 class ServiceClassFacade extends Facade 
 {
-    public static function getStaticClassAccessor()
+    protected static function getStaticClassAccessor()
     {
         return '\Namespace\ServiceClass';
     }
@@ -73,7 +73,10 @@ class ServiceClass
 // This is the mimic service class that can now access like static class.
 class ServiceClassFacade extends Facade
 {
-    public static function getStaticClassAccessor()
+    /**
+     * {@inheritdoc}
+     */
+    protected static function getStaticClassAccessor()
     {
         // The namespace of the Service Class that will convert
         // into a "static" like class.
