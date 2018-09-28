@@ -73,9 +73,6 @@ class ServiceClass
 // This is the mimic service class that can now access like static class.
 class ServiceClassFacade extends Facade
 {
-    /**
-     * {@inheritdoc}
-     */
     protected static function getStaticClassAccessor()
     {
         // The namespace of the Service Class that will convert
