@@ -17,7 +17,7 @@ script:
   - composer require php-coveralls/php-coveralls
   - mkdir -p build/logs
   - vendor/bin/phpunit
-  - vendor/bin/phan -o phan-analysis.log -m text
+  - vendor/bin/phan -m text --color
   - tail phan-analysis.log
 
 # Execute another command after success of the script.
