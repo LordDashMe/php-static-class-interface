@@ -6,7 +6,6 @@ php:
   - 7.2
   - 7.1
   - 7.0
-  - 5.6
 
 # Commands to be run before your environment runs.
 before_script:
@@ -18,6 +17,7 @@ script:
   - composer require php-coveralls/php-coveralls
   - mkdir -p build/logs
   - vendor/bin/phpunit
+  - vendor/bin/phan -o phan-analysis.log -m json
 
 # Execute another command after success of the script.
 after_success:
