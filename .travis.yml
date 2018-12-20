@@ -9,7 +9,7 @@ php:
 
 # Commands to be run before your environment runs.
 before_script:
-  - apt-get install -y php-ast
+  - sudo apt-get install -y php-ast
 
 # Commands you want to run that will verify your build.
 script: 
