@@ -21,7 +21,7 @@ script:
   - composer require php-coveralls/php-coveralls
   - mkdir -p build/logs
   - vendor/bin/phpunit
-  - vendor/bin/phan -m text --color
+  - vendor/bin/phan -p -m text --color
 
 # Execute another command after success of the script.
 after_success:

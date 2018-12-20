@@ -97,9 +97,6 @@ class Facade
      * Set the resolved service class instance to the class property.
      *
      * @param  string  $classNamespace
-     * 
-     * @throws LordDashMe\StaticClassInterface\Exception\ClassNamespaceResolver::isNotString
-     * @throws LordDashMe\StaticClassInterface\Exception\ClassNamespaceResolver::isNotExist
      *
      * @return mixed
      */
@@ -133,16 +130,16 @@ class Facade
     protected static function classNamespaceDecorator($classNamespace)
     {
         if ($classNamespace[0] !== '\\') {
-            return \substr_replace($classNamespace, '\\', 0, 0);
+            // The most weird thing here, the static analyzer 
+            // validate this as array return type.
+            return (string) \substr_replace($classNamespace, '\\', 0, 0);
         }
 
-        return $classNamespace;
+        return (string) $classNamespace;
     }
 
     /**
      * Get the service class namespace that will be convert into static class.
-     *
-     * @throws LordDashMe\StaticClassInterface\Exception\StaticClassAccessor::isNotDeclared
      * 
      * @return string
      */
