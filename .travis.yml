@@ -13,7 +13,7 @@ before_install:
   - sudo LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php -y
   - sudo apt-get update
   - sudo apt-get install -y php-ast
-  - phpenmod ast
+  - php -m
 
 # Commands to be run before your environment runs.
 before_script:
