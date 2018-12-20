@@ -9,6 +9,7 @@ php:
 
 # Commands to be run before your environment runs.
 before_script:
+  - apt-get install -y php-ast
 
 # Commands you want to run that will verify your build.
 script: 
@@ -17,7 +18,7 @@ script:
   - composer require php-coveralls/php-coveralls
   - mkdir -p build/logs
   - vendor/bin/phpunit
-  - vendor/bin/phan -m text --color
+  - vendor/bin/phan -o phan-analysis.log -m json
   - tail phan-analysis.log
 
 # Execute another command after success of the script.
